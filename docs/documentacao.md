@@ -69,6 +69,16 @@ Aqui iremos selecionar o resource group + usuário administrador + senhas
 <img width="978" height="733" alt="image" src="https://github.com/user-attachments/assets/7cd26635-22a7-4815-89ac-c8dacd565b71" />
 
 
+<img width="977" height="720" alt="image" src="https://github.com/user-attachments/assets/049cdebb-e62a-49db-8869-e0fd1f657ff7" />
+
+
+<img width="986" height="732" alt="image" src="https://github.com/user-attachments/assets/cfe8802e-aa59-4038-be9d-bca93099975d" />
+
+
+<img width="981" height="546" alt="image" src="https://github.com/user-attachments/assets/d2148d49-ef97-445b-8797-07293a298456" />
+
+
+<img width="981" height="662" alt="image" src="https://github.com/user-attachments/assets/8ae26f56-dc62-40b8-a06a-8c80a15ecd06" />
 
 
 #### 4.1.2 - Criar FortiGate Free Trial no Azure
@@ -106,19 +116,24 @@ Aqui iremos selecionar o resource group + usuário administrador + senhas
     - **Senha da conta Fortinet / token de avaliação**
 4. Complete a configuração inicial.
 
-#### 4.1.4 - Configuração do Firewall (Rota, regra)
+#### 4.1.3 - Configuração do Firewall (Rota, regra)
 
-<img width="976" height="227" alt="image" src="https://github.com/user-attachments/assets/550ff248-e3c9-4474-9879-8a84f25798a1" />
+<img width="981" height="224" alt="image" src="https://github.com/user-attachments/assets/b0c5c26e-ad7c-438e-9d3c-1ed9f3191688" />
 
 Configurações do Firewall Fortinet
 Interfaces
-<img width="968" height="411" alt="image" src="https://github.com/user-attachments/assets/bf6bc058-3fd6-4577-af21-8e7d00d3e9e2" />
+
+<img width="979" height="420" alt="image" src="https://github.com/user-attachments/assets/5302839d-6e6c-49fa-8b04-455f1c8064da" />
 
 Roteamento estático
-<img width="976" height="213" alt="image" src="https://github.com/user-attachments/assets/5a8b89d5-fdb5-43ad-8a20-619cd229037e" />
+
+<img width="980" height="214" alt="image" src="https://github.com/user-attachments/assets/9fa56d5c-569a-42f9-958b-074a5bd161c3" />
+
 
 Regra de firewal
-<img width="977" height="231" alt="image" src="https://github.com/user-attachments/assets/e7c30bfb-5dd0-44eb-bc50-90b00d1e25e2" />
+
+<img width="988" height="238" alt="image" src="https://github.com/user-attachments/assets/6b58730c-6d15-44cf-bd7d-c38e0ea35602" />
+
 
 ---
 
