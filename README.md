@@ -12,7 +12,9 @@ Existem duas formas principais de configuração:
 
 ---
 
-## 🔹 Opção 2 – Provisionamento via Terraform (com configuração manual da VM)
+## 🔹 Opção 2 – Provisionamento via Terraform (com configuração manual da VM do Fortigate)
+
+Observação: A criação da VM FortiGate via Terraform possui limitações devido à plataforma Azure Marketplace. Algumas configurações internas da VM, como licenciamento e ajustes específicos de interface, precisam ser feitas manualmente no portal do Azure após o deploy. Por isso, este laboratório automatiza a infraestrutura de rede, mas a configuração interna da VM deve ser realizada manualmente.
 
 * Utilizar **Terraform** para provisionar toda a infraestrutura de rede:
 
