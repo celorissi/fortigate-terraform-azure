@@ -9,3 +9,9 @@ envs/**/.terraform/
 
 # Arquivo de plano de execução
 envs/**/plan.out
+
+# Logs gerados pelos scripts
+logs/
+
+# Backups do state
+backups/
