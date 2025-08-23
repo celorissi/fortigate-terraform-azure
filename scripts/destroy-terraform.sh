@@ -9,11 +9,10 @@ BACKUP_DIR="$ENV_DIR/backups"
 # Cria diretórios se não existirem
 mkdir -p "$LOG_DIR" "$BACKUP_DIR"
 
-# Arquivo de log com timestamp
 LOG_FILE="$LOG_DIR/terraform-destroy-$(date +%F_%H-%M-%S).log"
 STATE_FILE="$ENV_DIR/terraform.tfstate"
 
-# Redireciona stdout e stderr para tee (terminal + log)
+# Redireciona stdout e stderr
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "⚠️  ATENÇÃO: Este comando vai destruir todos os recursos deste ambiente."
@@ -24,25 +23,23 @@ if [ "$CONFIRM" != "yes" ]; then
     exit 0
 fi
 
-# Checa se diretório do ambiente existe
 if [ ! -d "$ENV_DIR" ]; then
     echo "Diretório $ENV_DIR não encontrado. Abortando."
     exit 1
 fi
 cd "$ENV_DIR"
 
-# Backup do state, se existir
+# Backup do state
 if [ -f "$STATE_FILE" ]; then
     BACKUP_FILE="$BACKUP_DIR/terraform.tfstate-$(date +%F_%H-%M-%S).bak"
     cp "$STATE_FILE" "$BACKUP_FILE"
     echo "==> Backup do state criado em $BACKUP_FILE"
 fi
 
-# Inicializa Terraform
+# Inicializa e valida
 echo "==> Inicializando Terraform..."
 terraform init -input=false
 
-# Valida configuração
 echo "==> Validando configuração Terraform..."
 terraform validate
 
