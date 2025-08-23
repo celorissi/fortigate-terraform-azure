@@ -23,9 +23,8 @@ Observação: A criação da VM FortiGate via Terraform possui limitações devi
   * Subnets
   * Virtual Machine (VM FortiGate)
   * User Defined Routes (UDR)
-* Após o deploy, a configuração **interna da VM FortiGate** deve ser feita manualmente no portal do Azure.
 
-  * *Motivo:* existem limitações e incompatibilidades conhecidas entre o **Azure Marketplace** e o uso direto via Terraform para FortiGate.
+* Após o deploy, a configuração **interna da VM FortiGate** deve ser feita manualmente no portal do Azure.
 
 ---
 
