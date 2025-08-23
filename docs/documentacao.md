@@ -138,36 +138,47 @@ Regra de firewal
 ---
 
 ### 5. Criação da VM Spoke 01
-<img width="1003" height="739" alt="image" src="https://github.com/user-attachments/assets/ac964ec4-53f5-4b01-9728-243a87f10c52" />
+
+<img width="1012" height="742" alt="image" src="https://github.com/user-attachments/assets/60378219-22f9-4c31-9c0c-edcfb78d33e6" />
 
 Validação de conectividade
-<img width="1005" height="754" alt="image" src="https://github.com/user-attachments/assets/741eb62c-82a3-49df-944e-dd23a53c8c27" />
+
+<img width="1017" height="747" alt="image" src="https://github.com/user-attachments/assets/7c5f96c3-3cc4-4728-bd0c-900da0a5b318" />
 
 ---
 
 ### 6. Criação da VM Spoke 02
-<img width="1007" height="731" alt="image" src="https://github.com/user-attachments/assets/4f59d909-88f7-4ba3-8cb4-c2fab77e53ed" />
+
+<img width="1010" height="743" alt="image" src="https://github.com/user-attachments/assets/6c56c6e2-de88-4a57-b774-06b62af913e5" />
+
 
 Validação de conectividade
-<img width="1003" height="743" alt="image" src="https://github.com/user-attachments/assets/72b29b11-d5af-4dab-8f03-00b5cd99a4e2" />
+
+<img width="1015" height="754" alt="image" src="https://github.com/user-attachments/assets/6a9111fd-e911-4598-97a5-8e6aeed9f582" />
 
 ---
 
 ### 7. Configuração de UDR
 Subnet Spoke01
-<img width="1007" height="447" alt="image" src="https://github.com/user-attachments/assets/5cf10993-b289-461d-b4c7-19122e093f04" />
+
+<img width="1009" height="451" alt="image" src="https://github.com/user-attachments/assets/ef97fa3c-e1ef-443b-a807-45bd12363e5b" />
+
 
 Subnet Spoke02
-<img width="1006" height="395" alt="image" src="https://github.com/user-attachments/assets/0390bff5-c820-414e-a99c-c3d72c453458" />
+
+<img width="1011" height="398" alt="image" src="https://github.com/user-attachments/assets/20a2392a-f3da-4aeb-af0d-f9259eec5a82" />
 
 ---
 
 ### 8. NSG (VNET_HUB)
 VNET_Spoke01
-<img width="1000" height="520" alt="image" src="https://github.com/user-attachments/assets/31920001-8c36-4ddb-8d38-6e49c8cc5302" />
+
+<img width="1014" height="522" alt="image" src="https://github.com/user-attachments/assets/9794e02d-8376-4233-87dd-0340a598d76b" />
+
 
 VNET_Spoke02
-<img width="1003" height="431" alt="image" src="https://github.com/user-attachments/assets/f617a4d3-3c9e-4f70-ab2e-64960408ede5" />
+
+<img width="1012" height="437" alt="image" src="https://github.com/user-attachments/assets/613f5f88-48dc-4660-811f-12bd1733b75c" />
 
 ---
 
