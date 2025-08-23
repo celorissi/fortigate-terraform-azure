@@ -1,21 +1,18 @@
 # 📘 Playbook Azure CLI – Deploy Manual do FortiGate
 
 ### Etapa 0 - Autenticação
-```bash
+
 az login --use-device-code
-```
+
 ### Etapa 1 - Resource Group
 
-```bash
 az group create \
   --name Fortigate-RG \
   --location brazilsouth
-```
+
 
 ### Etapa 2 - Redes Virtuais
-VNET_Hub
-
-```bash
+#VNET_Hub
 
 az network vnet create \
   --resource-group Fortigate-RG \
@@ -25,73 +22,73 @@ az network vnet subnet create -g Fortigate-RG --vnet-name VNET_Hub -n subnet-out
 az network vnet subnet create -g Fortigate-RG --vnet-name VNET_Hub -n subnet-inside  --address-prefix 10.100.2.0/26
 az network vnet subnet create -g Fortigate-RG --vnet-name VNET_Hub -n subnet-mgmt    --address-prefix 10.100.3.0/26
 az network vnet subnet create -g Fortigate-RG --vnet-name VNET_Hub -n subnet-protect --address-prefix 10.100.4.0/26
-```
 
-VNET_Spoke1
 
-```bash
+#VNET_Spoke1
+
+
 az network vnet create \
   --resource-group Fortigate-RG \
   --name VNET_Spoke1 \
   --address-prefix 10.10.0.0/24 \
   --subnet-name subnet-vm \
   --subnet-prefix 10.10.0.0/25
-```
 
-VNET_Spoke2
 
-```bash
+#VNET_Spoke2
+
+
 az network vnet create \
   --resource-group Fortigate-RG \
   --name VNET_Spoke2 \
   --address-prefix 10.20.0.0/24 \
   --subnet-name subnet-vm \
   --subnet-prefix 10.20.0.0/25
-```
+
 
 ### Etapa 3 - Peerings
 
-```bash
+
 az network vnet peering create -g Fortigate-RG -n Hub-to-Spoke1 --vnet-name VNET_Hub   --remote-vnet VNET_Spoke1 --allow-vnet-access
 az network vnet peering create -g Fortigate-RG -n Spoke1-to-Hub --vnet-name VNET_Spoke1 --remote-vnet VNET_Hub   --allow-vnet-access
 
 az network vnet peering create -g Fortigate-RG -n Hub-to-Spoke2 --vnet-name VNET_Hub   --remote-vnet VNET_Spoke2 --allow-vnet-access
 az network vnet peering create -g Fortigate-RG -n Spoke2-to-Hub --vnet-name VNET_Spoke2 --remote-vnet VNET_Hub   --allow-vnet-access
-```
+
 
 ### Etapa 4 - FortiGate VM
-Observação: a criação da VM pode variar conforme SKU e plano Fortinet. Aqui está o fluxo básico.
+#Observação: a criação da VM pode variar conforme SKU e plano Fortinet. Aqui está o fluxo básico.
 
-4.1 Aceitar termos do Marketplace
+#4.1 Aceitar termos do Marketplace
 
-```bash
+
 az vm image terms accept \
   --publisher fortinet \
   --offer fortinet_fortigate-vm_v5 \
   --plan fortinet_fg-vm
-```
 
-4.2 Criar IP Público
 
-```bash
+#4.2 Criar IP Público
+
+
 az network public-ip create \
   --resource-group Fortigate-RG \
   --name fgt-pip \
   --sku Standard \
   --allocation-method Static
-```
 
-4.3 Criar NICs
 
-```bash
+#4.3 Criar NICs
+
+
 az network nic create -g Fortigate-RG -n fgt-nic-outside --vnet-name VNET_Hub --subnet subnet-outside --public-ip-address fgt-pip
 az network nic create -g Fortigate-RG -n fgt-nic-inside  --vnet-name VNET_Hub --subnet subnet-inside
 az network nic create -g Fortigate-RG -n fgt-nic-mgmt    --vnet-name VNET_Hub --subnet subnet-mgmt
-```
 
-4.4 Criar VM FortiGate (exemplo trial)
 
-```bash
+#4.4 Criar VM FortiGate (exemplo trial)
+
+
 az vm create \
   --resource-group Fortigate-RG \
   --name fw-az-01-fgt \
@@ -101,11 +98,11 @@ az vm create \
   --admin-password 'Senha@Forte123' \
   --nics fgt-nic-outside fgt-nic-inside fgt-nic-mgmt \
   --public-ip-sku Standard
-```
+
 
 ###  Etapa 5 - VM Spoke01
 
-```bash
+
 az network public-ip create -g Fortigate-RG -n spoke1-pip --sku Basic --allocation-method Dynamic
 
 az network nic create -g Fortigate-RG -n spoke1-nic --vnet-name VNET_Spoke1 --subnet subnet-vm --public-ip-address spoke1-pip
@@ -117,11 +114,11 @@ az vm create \
   --admin-username azureuser \
   --generate-ssh-keys \
   --nics spoke1-nic
-```
+
 
 ###  Etapa 6 - VM Spoke02
 
-```bash
+
 az network public-ip create -g Fortigate-RG -n spoke2-pip --sku Basic --allocation-method Dynamic
 
 az network nic create -g Fortigate-RG -n spoke2-nic --vnet-name VNET_Spoke2 --subnet subnet-vm --public-ip-address spoke2-pip
@@ -133,11 +130,11 @@ az vm create \
   --admin-username azureuser \
   --generate-ssh-keys \
   --nics spoke2-nic
-```
+
 
 ###  Etapa 7 - UDR
 
-```bash
+
 az network route-table create -g Fortigate-RG -n UDR-Spoke1
 az network route-table route create -g Fortigate-RG --route-table-name UDR-Spoke1 -n default-route --address-prefix 0.0.0.0/0 --next-hop-type VirtualAppliance --next-hop-ip-address <IP_FGT_INSIDE>
 az network vnet subnet update -g Fortigate-RG --vnet-name VNET_Spoke1 -n subnet-vm --route-table UDR-Spoke1
@@ -145,15 +142,14 @@ az network vnet subnet update -g Fortigate-RG --vnet-name VNET_Spoke1 -n subnet-
 az network route-table create -g Fortigate-RG -n UDR-Spoke2
 az network route-table route create -g Fortigate-RG --route-table-name UDR-Spoke2 -n default-route --address-prefix 0.0.0.0/0 --next-hop-type VirtualAppliance --next-hop-ip-address <IP_FGT_INSIDE>
 az network vnet subnet update -g Fortigate-RG --vnet-name VNET_Spoke2 -n subnet-vm --route-table UDR-Spoke2
-```
+
 
 ###  Etapa 8 - NSG
 
-```bash
+
 az network nsg create -g Fortigate-RG -n nsg-hub
 az network nsg create -g Fortigate-RG -n nsg-spoke1
 az network nsg create -g Fortigate-RG -n nsg-spoke2
 
 az network nsg rule create -g Fortigate-RG --nsg-name nsg-hub   -n allow-ssh   --priority 100 --access Allow --protocol Tcp --direction Inbound --destination-port-ranges 22
 az network nsg rule create -g Fortigate-RG --nsg-name nsg-hub   -n allow-https --priority 110 --access Allow --protocol Tcp --direction Inbound --destination-port-ranges 443
-```
