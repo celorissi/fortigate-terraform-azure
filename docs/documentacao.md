@@ -16,7 +16,7 @@ az login --use-device-code
 
 1. Criar **Resource Group** (ex.: `Fortigate-RG`).
 2. Definir **região** (ex.: Brazil South ou East US, conforme disponibilidade).
-<img width="725" height="393" alt="image" src="https://github.com/user-attachments/assets/ebd73044-3912-4f0d-ae77-247a535df353" />
+<img width="1009" height="548" alt="image" src="https://github.com/user-attachments/assets/b071d024-5889-4171-86fa-62d3121ee120" />
 
 ---
 
@@ -28,23 +28,24 @@ az login --use-device-code
     - Subnet `subnet-mgmt`: `10.100.3.0/26`
     - Subnet `subnet-protect`: `10.100.4.0/26`
   
-<img width="1004" height="305" alt="image" src="https://github.com/user-attachments/assets/e27fa85a-9bfb-4e1a-bd0c-7531b30cddac" />
+<img width="1014" height="305" alt="image" src="https://github.com/user-attachments/assets/a5a30fdb-201e-452c-a507-49c49c2a0b52" />
 
 2. Criar **VNET_Spoke1**: `10.10.0.0/24`.
     - Subnet `subnet-vm`: `10.10.0.0/25`.
   
-<img width="1006" height="313" alt="image" src="https://github.com/user-attachments/assets/e596ca96-9a8c-4223-8d76-05e58b584eff" />
+0<img width="1015" height="310" alt="image" src="https://github.com/user-attachments/assets/bafda7a0-4d9f-474d-9c57-189593ea241c" />
+
 
 3. Criar **VNET_Spoke2**: `10.20.0.0/24`.
     - Subnet `subnet-vm`: `10.20.0.0/25`.
 
-<img width="1000" height="312" alt="image" src="https://github.com/user-attachments/assets/74dff91a-ec2b-48ec-a469-a7b722545b1c" />
+<img width="1009" height="317" alt="image" src="https://github.com/user-attachments/assets/8c276dd4-517d-4e2e-a26e-9968b67e2894" />
 
 ---
 
 ### 3. Criar peerings Hub ↔ Spokes e Hub ↔ OnPrem (se houver simulação).
 
-<img width="1007" height="372" alt="image" src="https://github.com/user-attachments/assets/9ca360a2-dfd2-4d56-8764-eb1a16ffd211" />
+<img width="1006" height="374" alt="image" src="https://github.com/user-attachments/assets/7b169a81-5118-4718-bc63-2a700748db97" />
 
 ---
 
@@ -54,26 +55,21 @@ Links uteis - [NetSec Deploy Fortigate VM Free in Azure on Low End Free Tier VPS
 ### 4.1 - Criação no portal Azure Manual
 
 Neste passo selecionar Single VM
-<img width="976" height="363" alt="image" src="https://github.com/user-attachments/assets/baa742e0-979e-4ae7-a414-bbcce44ce5b2" />
+<img width="981" height="367" alt="image" src="https://github.com/user-attachments/assets/a473ceb6-a2ae-40c5-8a47-566fc7185f00" />
 
 Aqui iremos selecionar o resource group + usuário administrador + senhas
-<img width="977" height="613" alt="image" src="https://github.com/user-attachments/assets/06e72a2f-4bb1-43cf-9e3f-8741668d880e" />
+<img width="982" height="614" alt="image" src="https://github.com/user-attachments/assets/6ae4db63-6797-4263-b934-56f2d765ca28" />
 
-<img width="976" height="592" alt="image" src="https://github.com/user-attachments/assets/7f00a678-5f4e-4643-934d-f51c749b684c" />
+<img width="978" height="726" alt="image" src="https://github.com/user-attachments/assets/5a2aa1d6-9152-49cb-ac7c-6ed151cc27d8" />
 
-<img width="975" height="720" alt="image" src="https://github.com/user-attachments/assets/12d920c0-84ba-4f11-978c-776204a7ed1b" />
 
-<img width="977" height="732" alt="image" src="https://github.com/user-attachments/assets/e5ea7c79-9e72-4ae3-a3b3-b0f65724f840" />
+<img width="983" height="725" alt="image" src="https://github.com/user-attachments/assets/fc0a061e-8213-488a-9c23-1eba5d1ec56f" />
 
-<img width="981" height="715" alt="image" src="https://github.com/user-attachments/assets/aa308c3d-1a20-450c-919b-14a3f806c256" />
 
-<img width="977" height="726" alt="image" src="https://github.com/user-attachments/assets/07074b4f-081f-4ebf-9970-ed3b39ea8550" />
+<img width="978" height="733" alt="image" src="https://github.com/user-attachments/assets/7cd26635-22a7-4815-89ac-c8dacd565b71" />
 
-<img width="976" height="544" alt="image" src="https://github.com/user-attachments/assets/d4a97141-c2fe-4047-a297-54adb31ba09a" />
 
-<img width="975" height="522" alt="image" src="https://github.com/user-attachments/assets/1a8257f6-ff3a-408f-b6b3-d775b7d3b421" />
 
-<img width="976" height="665" alt="image" src="https://github.com/user-attachments/assets/7c303763-84d0-4760-be38-e008e5ecd2f5" />
 
 #### 4.1.2 - Criar FortiGate Free Trial no Azure
 
