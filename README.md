@@ -7,7 +7,7 @@ Existem duas formas principais de configuração:
 
 ## 🔹 Opção 1 – Configuração manual completa
 
-* Seguir todos os passos descritos na documentação (itens 1 a 8).
+* Seguir todos os passos descritos na documentação /docs/documentacao.md (itens 1 a 8).
 * Todos os recursos (Resource Group, VNET, Subnets, NSGs, UDRs e VM FortiGate) devem ser criados manualmente pelo portal do Azure ou CLI.
 
 ---
