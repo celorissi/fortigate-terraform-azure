@@ -1,0 +1,47 @@
+# Guia de Comandos Azure CLI – FortiGate
+
+# Autenticação no Azure
+# Fazer login no portal Azure
+az login --use-device-code
+
+# Verificar disponibilidade da imagem FortiGate no Marketplace
+# Listar todas as imagens Fortinet disponíveis
+az vm image list \
+  --publisher fortinet \
+  --offer fortinet_fortigate-vm_v5 \
+  --all \
+  -o table
+
+# Listar imagens Fortinet em uma região específica (ex: Brazil South)
+az vm image list \
+  --publisher fortinet \
+  --offer fortinet_fortigate-vm_v5 \
+  --all \
+  --location brazilsouth \
+  -o table
+
+# Aceitar os termos do Marketplace (necessário antes de criar a VM)
+az vm image terms accept \
+  --publisher fortinet \
+  --offer fortinet_fortigate-vm_v5 \
+  --plan fortinet_fg-vm
+
+# Análise de interfaces de rede (NICs)
+# Listar todas as NICs em um Resource Group
+az network nic list \
+  -g rg-fgt-lab \
+  -o table
+
+# Listar NICs associadas a um FortiGate específico
+az vm nic list \
+  --resource-group Fortigate-RG \
+  --vm-name fw-az-01-fgt \
+  -o table
+
+# Analisar detalhes da VM FortiGate
+# Exibir detalhes completos da VM em JSON
+az vm show \
+  --resource-group Fortigate-RG \
+  --name fw-az-01-fgt \
+  --show-details \
+  -o json

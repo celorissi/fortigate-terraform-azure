@@ -1,0 +1,11 @@
+# Terraform - arquivos de estado e lock
+envs/**/terraform.tfstate
+envs/**/terraform.tfstate.*
+envs/**/.terraform.lock.hcl
+envs/**/.terraform.tfstate.lock.info
+
+# Diretório de cache do Terraform
+envs/**/.terraform/
+
+# Arquivo de plano de execução
+envs/**/plan.out
