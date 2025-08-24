@@ -113,24 +113,13 @@ terraform -version
 
 ## 🔹 Scripts disponíveis
 
-  ------------------------------------------------------------------------------------------
-  Script                   Função         O que é mantido         O que é removido
-  ------------------------ -------------- ----------------------- --------------------------
-  `apply-terraform.sh`     Cria os        `logs/`, `backups/`,    State temporário,
-                           recursos do    `.terraform.lock.hcl`   plan.out, cache
-                           laboratório                            
+| Script                 | Função                                | O que é mantido                                          | O que é removido                                                     |
+| ---------------------- | ------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------- |
+| `apply-terraform.sh`   | Cria os recursos do laboratório       | `logs/`, `backups/`, `.terraform.lock.hcl`               | State temporário, plan.out, cache                                    |
+| `destroy-terraform.sh` | Destroi todos os recursos do ambiente | Backup do state em `backups/`                            | Recursos na nuvem                                                    |
+| `clean-terraform.sh`   | Reseta o laboratório local            | Nenhum (logs e backups serão recriados no próximo apply) | Todos os arquivos locais do Terraform, cache, diretórios temporários |
+| `git_cli.sh`           | Auxilia operações Git                 | Nenhum                                                   | Nenhum                                                               |
 
-  `destroy-terraform.sh`   Destroi todos  Backup do state em      Recursos na nuvem
-                           os recursos do `backups/`              
-                           ambiente                               
-
-  `clean-terraform.sh`     Reseta o       Nenhum (logs e backups  Todos os arquivos locais
-                           laboratório    serão recriados no      do Terraform, cache,
-                           local          próximo apply)          diretórios temporários
-
-  `git_cli.sh`             Auxilia        Nenhum                  Nenhum
-                           operações Git                          
-  ------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
