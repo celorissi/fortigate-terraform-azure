@@ -1,4 +1,4 @@
-# Terraform FortiGate Azure Lab
+# FortiGate Azure Lab
 
 Este repositório contém instruções e código Terraform para a implementação de um laboratório com **FortiGate no Microsoft Azure**.
 Existem duas formas principais de configuração:
