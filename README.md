@@ -135,8 +135,8 @@ terraform -version
                        │
                        │
            ┌───────────┴───────────┐
-           │ destroy-terraform.sh   │
-           │       (Destruir)       │
+           │ destroy-terraform.sh  │
+           │       (Destruir)      │
            └───────────┬───────────┘
                        │
                        ▼
@@ -144,8 +144,8 @@ terraform -version
                        │
                        │
            ┌───────────┴───────────┐
-           │ clean-terraform.sh     │
-           │        (Reset)         │
+           │ clean-terraform.sh    │
+           │        (Reset)        │
            └───────────┬───────────┘
                        │
                        ▼
