@@ -22,7 +22,7 @@ az login --use-device-code
 
 ### **2. Criação das Redes Virtuais**
 
-1. Criar a **VNET_Hub**: `10.100.0.0/22`.
+1. Criar a **VNET_Hub**: `10.100.0.0/16`.
     - Subnet `subnet-outside`: `10.100.1.0/26`
     - Subnet `subnet-inside`: `10.100.2.0/26`
     - Subnet `subnet-mgmt`: `10.100.3.0/26`
