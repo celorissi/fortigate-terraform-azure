@@ -33,7 +33,7 @@ az login --use-device-code
 2. Criar **VNET_Spoke1**: `10.10.0.0/24`.
     - Subnet `subnet-vm`: `10.10.0.0/25`.
   
-0<img width="1015" height="310" alt="image" src="https://github.com/user-attachments/assets/bafda7a0-4d9f-474d-9c57-189593ea241c" />
+<img width="1015" height="310" alt="image" src="https://github.com/user-attachments/assets/bafda7a0-4d9f-474d-9c57-189593ea241c" />
 
 
 3. Criar **VNET_Spoke2**: `10.20.0.0/24`.
