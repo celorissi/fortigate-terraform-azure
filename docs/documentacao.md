@@ -24,9 +24,9 @@ az login --use-device-code
 
 1. Criar a **VNET_Hub**: `10.100.0.0/16`.
     - Subnet `subnet-outside`: `10.100.1.0/26`
-    - Subnet `subnet-inside`: `10.100.2.0/26`
-    - Subnet `subnet-mgmt`: `10.100.3.0/26`
-    - Subnet `subnet-protect`: `10.100.4.0/26`
+    - Subnet `subnet-inside`: `10.100.2.192/26`
+    - Subnet `subnet-mgmt`: `10.100.3.192/26`
+    - Subnet `subnet-protect`: `10.100.4.192/26`
   
 <img width="1014" height="305" alt="image" src="https://github.com/user-attachments/assets/a5a30fdb-201e-452c-a507-49c49c2a0b52" />
 
